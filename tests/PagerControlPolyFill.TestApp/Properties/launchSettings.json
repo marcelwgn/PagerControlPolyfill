@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PagerControlPolyfill.TestApp (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PagerControlPolyfill.TestApp (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

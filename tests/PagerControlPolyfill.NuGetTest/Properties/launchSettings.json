@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "PagerControlPolyfill.NuGetTest (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "PagerControlPolyfill.NuGetTest (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
