@@ -20,6 +20,7 @@
 		<Product>PagerControlPolyfill</Product>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageVersion>1.0.1</PackageVersion>
 	</PropertyGroup>
 
 

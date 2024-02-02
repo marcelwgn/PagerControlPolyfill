@@ -272,7 +272,7 @@ namespace PagerControlPolyfill
 			}
 			else if (displayMode == PagerControlDisplayMode.NumberBox)
 			{
-				VisualStateManager.GoToState(this, c_numberPanelVisibleVisualState, false);
+				VisualStateManager.GoToState(this, c_numberBoxVisibleVisualState, false);
 			}
 			else
 			{
@@ -709,7 +709,7 @@ namespace PagerControlPolyfill
 			if (selectedPageIndicator != null && numberPanelRepeater != null)
 			{
 				numberPanelRepeater.UpdateLayout();
-				if (numberPanelRepeater.GetOrCreateElement(index) is FrameworkElement element)
+				if (numberPanelRepeater.TryGetElement(index) is FrameworkElement element)
 				{
 					var boundingRect = element.TransformToVisual(numberPanelRepeater).TransformBounds(new Rect(0, 0, (float)numberPanelRepeater.ActualWidth, (float)numberPanelRepeater.ActualHeight));
 					Thickness newMargin = new Thickness()
