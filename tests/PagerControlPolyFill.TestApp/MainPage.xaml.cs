@@ -22,9 +22,9 @@ namespace PagerControlPolyfill.TestApp
 	/// <summary>
 	/// An empty window that can be used on its own or navigated to within a Frame.
 	/// </summary>
-	public sealed partial class MainWindow : Window
+	public sealed partial class MainPage : Page
 	{
-		public MainWindow()
+		public MainPage()
 		{
 			this.InitializeComponent();
 			RootGrid.Loaded += OnLoad;
@@ -37,6 +37,14 @@ namespace PagerControlPolyfill.TestApp
 		Button previousPageButton;
 		Button nextPageButton;
 		Button lastPageButton;
+
+		public int SelectedPageIndexBind
+		{
+			get { return (int)GetValue(SelectedPageIndexBindProperty); }
+			set { SetValue(SelectedPageIndexBindProperty, value); }
+		}
+		public static readonly DependencyProperty SelectedPageIndexBindProperty =
+			DependencyProperty.Register("SelectedPageIndexBind", typeof(int), typeof(MainPage), new PropertyMetadata(5));
 
 		private void OnLoad(object sender, RoutedEventArgs args)
 		{
