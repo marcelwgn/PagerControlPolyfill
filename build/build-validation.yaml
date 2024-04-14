@@ -1,0 +1,33 @@
+trigger:
+-  main
+
+pr:
+  branches:
+    include:
+      -  main
+  autoCancel: true
+
+pool:
+  vmImage: 'windows-latest'
+
+steps:
+  - checkout: self
+
+  - task: UseDotNet@2
+    displayName: 'Install .NET 6.0.x SDK'
+    inputs:
+      packageType: 'sdk'
+      version: '6.0.x'
+      installationPath: $(Agent.ToolsDirectory)/dotnet
+
+  - task: MSBuild@1
+    displayName: 'Restore NuGet packages'
+    inputs:
+      solution: '**/*.sln'
+      msbuildArguments: '/t:restore'
+
+  - task: MSBuild@1
+    displayName: 'Build projects'
+    inputs:
+      solution: '**/*.sln'
+      msbuildArguments: '/t:build /p:configuration=Release'
