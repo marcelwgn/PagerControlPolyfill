@@ -6,7 +6,7 @@ namespace PagerControlPolyfill
 {
 	[System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1024:Use properties where appropriate", Justification = "This is part of the WinUI API, must not change.")]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "This is part of the WinUI API, must not change.")]
-	public class PagerControlAutomationPeer : FrameworkElementAutomationPeer
+	public partial class PagerControlAutomationPeer : FrameworkElementAutomationPeer
 	{
 		public PagerControlAutomationPeer(PagerControl owner) : base(owner)
 		{
