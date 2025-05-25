@@ -12,11 +12,11 @@ using Windows.System;
 
 namespace PagerControlPolyfill
 {
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1859:Use concrete types when possible for improved performance", Justification = "This is part of the WinUI API, must not change.")]
 	public partial class PagerControl : Control
 	{
 		private int lastSelectedPageIndex = -1;
-		private int lastNumberOfPagesCount = 0;
-
+		private int lastNumberOfPagesCount;
 
 		private IList<object> comboBoxEntries;
 		private IList<object> numberPanelElements;
@@ -45,7 +45,8 @@ namespace PagerControlPolyfill
 
 			Loaded += PagerControl_Loaded;
 		}
-		
+
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types")]
 		~PagerControl()
 		{
 			try

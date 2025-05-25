@@ -38,6 +38,7 @@ namespace PagerControlPolyfill
 		public static readonly DependencyProperty ButtonPanelAlwaysShowFirstLastPageIndexProperty =
 			DependencyProperty.Register("ButtonPanelAlwaysShowFirstLastPageIndex", typeof(bool), typeof(PagerControl), new PropertyMetadata(true, OnPropertyChanged));
 
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1003:Use generic event handler instances", Justification = "This is part of the WinUI API, must not change.")]
 		public event TypedEventHandler<PagerControl, PagerControlSelectedIndexChangedEventArgs>? SelectedIndexChanged;
 
 
