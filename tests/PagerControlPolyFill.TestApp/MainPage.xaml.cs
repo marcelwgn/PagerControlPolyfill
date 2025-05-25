@@ -22,6 +22,7 @@ namespace PagerControlPolyfill.TestApp
 	/// <summary>
 	/// An empty window that can be used on its own or navigated to within a Frame.
 	/// </summary>
+#pragma warning disable CS0252 // Possible unintended reference comparison; left hand side needs cast
 	public sealed partial class MainPage : Page
 	{
 		public MainPage()
@@ -164,6 +165,7 @@ namespace PagerControlPolyfill.TestApp
 			CheckIfButtonsHiddenLabel.Text = violationCount == 0 ? "Passed" : "Failed";
 		}
 
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Globalization", "CA1305:Specify IFormatProvider", Justification = "Does not matter here.")]
 		private void OnSelectedIndexChanged(PagerControl sender, PagerControlSelectedIndexChangedEventArgs args)
 		{
 			UpdateNumberPanelContentTextBlock(this, null);

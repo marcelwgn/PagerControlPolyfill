@@ -4,9 +4,10 @@ using System;
 
 namespace PagerControlPolyfill
 {
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1024:Use properties where appropriate", Justification = "This is part of the WinUI API, must not change.")]
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "This is part of the WinUI API, must not change.")]
 	public class PagerControlAutomationPeer : FrameworkElementAutomationPeer
 	{
-
 		public PagerControlAutomationPeer(PagerControl owner) : base(owner)
 		{
 		}
@@ -69,6 +70,7 @@ namespace PagerControlPolyfill
 			return Array.Empty<object>();
 		}
 
+		[System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1030:Use events where appropriate", Justification = "This is part of the original WinUI implementation, must not change.")]
 		public void RaiseSelectionChanged(double oldIndex, double newIndex)
 		{
 			if (ListenerExists(AutomationEvents.PropertyChanged))

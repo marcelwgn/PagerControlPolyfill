@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace PagerControlPolyfill
 {
+	[System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2227:Collection properties should be read only", Justification = "This is part of the WinUI API, must not change.")]
 	public class PagerControlTemplateSettings : DependencyObject
 	{
 		public IList<object> Pages
